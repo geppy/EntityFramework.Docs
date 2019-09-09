@@ -9,12 +9,23 @@ uid: core/modeling/required-optional
 
 A property is considered optional if it is valid for it to contain `null`. If `null` is not a valid value to be assigned to a property then it is considered to be a required property.
 
+When mapping to a relational database schema, required properties are created as non-nullable columns, and optional properties are created as nullable columns.
+
 ## Conventions
 
-By convention, a property whose CLR type can contain null will be configured as optional (`string`, `int?`, `byte[]`, etc.). Properties whose CLR type cannot contain null will be configured as required (`int`, `decimal`, `bool`, etc.).
+By convention, a property whose CLR type can contain null will be configured as optional, whereas properties whose CLR type cannot contain null will be configured as required. For example, all properties with CLR value types (`int`, `decimal`, `bool`, etc.) are configured as required, and all properties with nullable CLR value types (`int?`, `decimal?`, `bool?`, etc.) are configured as optional.
 
-> [!NOTE]  
-> A property whose CLR type cannot contain null cannot be configured as optional. The property will always be considered required by Entity Framework.
+C# 8 introduced a new feature called [nullable reference types](/dotnet/csharp/tutorials/nullable-reference-types), which allows reference types to be annotated, indicating whether it is valid for them to contain null or not. This feature is disabled by default, and if enabled, it modifies EF Core's behavior in the following way:
+
+* If nullable reference types are disabled (the default), all properties with CLR reference types are configured as optional by convention (e.g. `string`).
+* If nullable reference types are enabled, properties will be configured based on the C# nullability of their CLR type: `string?` will be configured as optional, whereas `string` will be configured as required.
+
+Using nullable reference types is recommended since it flows the nullability expressed in C# code to EF Core's model and to the database, and obviates the use of the Fluent API or Data Annotations to express the same concept twice.
+
+> [!NOTE]
+> Exercise caution when enabling nullable reference types on an existing project: reference type properties which were previously configured as optional will now be configured as required, unless they are explicitly annotated to be nullable. When managing a relational database schema, this may cause migrations to be generated which alter the database column's nullability.
+
+For more information on nullable reference types and how to use them with EF Core, [see the dedicated documentation page for this feature](xref:core/miscellaneous/nullable-reference-types).
 
 ## Data Annotations
 
