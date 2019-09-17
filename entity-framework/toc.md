@@ -1,18 +1,21 @@
 # [Entity Framework](index.md)
 
-## [Compare EF Core & EF6](efcore-and-ef6/index.md)
+## EF Core & EF6
 
-### [EF6 and EF Core in the Same Application](efcore-and-ef6/side-by-side.md)
-### [Porting from EF6 to EF Core](efcore-and-ef6/porting/index.md)
+### [Compare EF6 & EF Core](efcore-and-ef6/index.md)
+### [Use EF6 and EF Core in the same application](efcore-and-ef6/side-by-side.md)
+### Port from EF6 to EF Core
+#### [Overview](efcore-and-ef6/porting/index.md)
 #### [Validate Requirements](efcore-and-ef6/porting/ensure-requirements.md)
 #### [Porting an EDMX-Based Model](efcore-and-ef6/porting/port-edmx.md)
 #### [Porting a Code-Based Model](efcore-and-ef6/porting/port-code.md)
 
-## [Entity Framework Core](core/index.md)
+## Entity Framework Core
 
-### [What's New](core/what-is-new/index.md)
-#### [Roadmap](core/what-is-new/roadmap.md)
-#### [EF Core 3.0 (latest release)](core/what-is-new/ef-core-3.0/index.md)
+### [Overview](core/index.md)
+### What's New
+#### [Roadmap](core/what-is-new/index.md)
+#### EF Core 3.0 (latest release)
 ##### [New features](core/what-is-new/ef-core-3.0/features.md)
 ##### [Breaking changes](core/what-is-new/ef-core-3.0/breaking-changes.md)
 #### [EF Core 2.2](core/what-is-new/ef-core-2.2.md)
@@ -25,7 +28,8 @@
 ##### [From 1.0 RC2 to RTM](core/miscellaneous/rc2-rtm-upgrade.md)
 ##### [From 1.x to 2.0](core/miscellaneous/1x-2x-upgrade.md)
 
-### [Get Started](core/get-started/index.md)
+### Get Started
+#### [Overview](core/get-started/index.md)
 #### [Installing EF Core](core/get-started/install/index.md)
 #### [.NET Core](core/get-started/netcore/index.md)
 ##### [New Database](core/get-started/netcore/new-db-sqlite.md)

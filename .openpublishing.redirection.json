@@ -129,6 +129,17 @@
             "source_path": "entity-framework/core/extensions/llbl-gen-pro.md",
             "redirect_url": "/ef/core/extensions/index",
             "redirect_document_id": false
+        },
+        {
+            "source_path": "entity-framework/core/what-is-new/roadmap.md",
+            "redirect_url": "/ef/core/what-is-new/index",
+            "redirect_document_id": false
+        },
+        {
+            "source_path": "entity-framework/core/what-is-new/ef-core-3.0/index.md",
+            "redirect_url": "/ef/core/what-is-new/ef-core-3.0/features",
+            "redirect_document_id": false
         }
+        
     ]
 }
